@@ -1,0 +1,1 @@
+Write-output "Running script after successful tests"
