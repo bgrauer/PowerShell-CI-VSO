@@ -7,8 +7,12 @@ $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
 
 Describe -Tags "Example" "Add-Numbers" {
 
+    It "Is release build" {
+        $true | should be $false
+    }
+    
     It "Check City" {
-        Get-City | Should Be "MyCity"
+        Get-City | Should Not Be $null
     }
 
 	It "Check City with Mock" {
