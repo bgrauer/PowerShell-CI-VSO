@@ -8,11 +8,11 @@ $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
 Describe -Tags "Example" "Add-Numbers" {
 
     It "Check City" {
-        GetCity | Should Be "MyCity"
+        Get-City | Should Be "MyCity"
     }
 
 	It "Check City with Mock" {
-		Mock GetCity {return "MyCity"}
-        GetCity | Should Be "MyCity"
+		Mock Get-City {return "MyCity"}
+        Get-City | Should Be "MyCity"
     }
 }
